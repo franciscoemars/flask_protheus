@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}uMonitor{% endblock %}
+
+{% block page_content %}
+
+<div class="page-header">
+    <h1>Protheus e Python</h1>
+    <h4>Exemplo utilizando Flask para mostrar o Faturamento</h4>
+</div>
+
+<br>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Cliente</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Total</th>
+      <th scope="col">Faturado</th>
+    </tr>
+    </thead>
+    <tbody>
+      {% for sql in sql %}
+        <tr>
+          <td>{{ sql.cliente }}</td>
+          <td>{{ sql.nome }}</td>
+          <td>{{ sql.total }}</td>
+          <td>{{ sql.faturado }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+
+<br><br>
+<p><h6> <center>Departamento de Tecnologia - Grupo UTAM.</center></h6></p>
+
+{% endblock %}
